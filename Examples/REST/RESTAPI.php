@@ -11,13 +11,13 @@ function get_person_by_id($id)
   // Build JSON array to create the necessary data structure
   switch ($id){
     case 1:
-      $person_info = array("person_name" => "Dan Krutz", "person_age" => "12", "favorite_movie" => "Bloodsport 2"); 
+      $person_info = array("person_name" => "Shayde Nofziger", "person_age" => "12", "favorite_movie" => "Bloodsport 2"); 
       break;
     case 2:
       $person_info = array("person_name" => "Mike Lutz", "person_age" => "34", "favorite_movie" => "Bloodsport");
       break;
     case 3:
-      $person_info = array("person_name" => "Jim Vallino", "person_age" => "45", "favorite_movie" => "Goodfellas");
+      $person_info = array("person_name" => "Dumb Person", "person_age" => "45", "favorite_movie" => "Goodfellas");
       break;
     case 4:
       $person_info = array("person_name" => "Sam Malachowsky", "person_age" => "89", "favorite_movie" => "Sound of Music");
