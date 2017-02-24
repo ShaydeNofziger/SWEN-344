@@ -5,24 +5,24 @@
     <script type='text/javascript'>
       var loadDataForUser = function() {
         // build the url for the individual person (uses template strings)
-        const url = `http://www.se.rit.edu/~sln7755/SWEN-344/Examples/REST/RESTAPI.php?action=get_person&id=${this.id}`;
+        var url = `http://www.se.rit.edu/~dkrutz/SWEN-344/Examples/REST/RESTAPI.php?action=get_person&id=${this.id}`;
 
         // load the data from the api
-        const xhr = new XMLHttpRequest();
+        var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
 
         xhr.onload = function() {
-          const response = JSON.parse(xhr.responseText);
+          var response = JSON.parse(xhr.responseText);
 
           // create an array of trs that will be added to the page
-          const trs = Object.keys(response).map(function(key) {
-            const left = document.createElement('td');
+          var trs = Object.keys(response).map(function(key) {
+            var left = document.createElement('td');
             left.textContent = key;
 
-            const right = document.createElement('td');
+            var right = document.createElement('td');
             right.textContent = response[key];
 
-            const tr = document.createElement('tr');
+            var tr = document.createElement('tr');
             tr.appendChild(left);
             tr.appendChild(right);
 
@@ -30,12 +30,12 @@
           });
 
           // create a table and add the rows
-          const table = document.createElement('table');
+          var table = document.createElement('table');
           trs.forEach(function(tr) {
             table.appendChild(tr);
           });
 
-          const container = document.getElementById('person-info');
+          var container = document.getElementById('person-info');
 
           // remove any existing child if it exists
           if (container.firstChild) {
@@ -50,21 +50,21 @@
 
       window.onload = function() {
         // the url for the people list
-        const url = 'http://www.se.rit.edu/~sln7755/SWEN-344/Examples/REST/RESTAPI.php?action=get_person_list';
+        var url = 'http://www.se.rit.edu/~dkrutz/SWEN-344/Examples/REST/RESTAPI.php?action=get_person_list';
 
         // build an xhr to request the info
-        const xhr = new XMLHttpRequest();
+        var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
 
         xhr.onload = function() {
-          const response = JSON.parse(xhr.responseText);
+          var response = JSON.parse(xhr.responseText);
 
           // convert each entry to a link on the page
           // because the information has already been requested this *can* be
           // done without re-requesting from the server.
           response.forEach(function(entry) {
             // create a link
-            const elem = document.createElement('a');
+            var elem = document.createElement('a');
             elem.href = '#';
             elem.id = entry.id;
             elem.textContent = entry.name;
@@ -72,7 +72,7 @@
             elem.onclick = loadDataForUser;
 
             // create an li to add to the list
-            const li = document.createElement('li');
+            var li = document.createElement('li');
             li.appendChild(elem);
 
             // place it on the page
