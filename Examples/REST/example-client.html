@@ -5,7 +5,7 @@
     <script type='text/javascript'>
       var loadDataForUser = function() {
         // build the url for the individual person (uses template strings)
-        var url = `http://www.se.rit.edu/~dkrutz/SWEN-344/Examples/REST/RESTAPI.php?action=get_person&id=${this.id}`;
+        var url = `http://www.se.rit.edu/~dkrutz/swen-344/REST/RESTAPI.php?action=get_person&id=${this.id}`;
 
         // load the data from the api
         var xhr = new XMLHttpRequest();
@@ -50,7 +50,7 @@
 
       window.onload = function() {
         // the url for the people list
-        var url = 'http://www.se.rit.edu/~dkrutz/SWEN-344/Examples/REST/RESTAPI.php?action=get_person_list';
+        var url = 'http://www.se.rit.edu/~dkrutz/swen-344/REST/RESTAPI.php?action=get_person_list';
 
         // build an xhr to request the info
         var xhr = new XMLHttpRequest();
